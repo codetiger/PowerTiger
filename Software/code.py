@@ -13,7 +13,7 @@ import socketpool
 import wifi
 from adafruit_httpserver import Server, Request, Response
 
-i2c = busio.I2C(scl=board.GP27, sda=board.GP26)
+i2c = busio.I2C(scl=board.GP1, sda=board.GP0)
 pca = adafruit_tca9548a.PCA9546A(i2c)
         
 sensor_info = [
