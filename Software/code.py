@@ -1,42 +1,28 @@
 import time
+import json
 from math import sqrt
 import board
 import busio
 import microcontroller
+import socketpool
+import wifi
 
 import adafruit_tca9548a
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.ads1x15 import Mode
 from adafruit_ads1x15.analog_in import AnalogIn
 
-import socketpool
-import wifi
 from adafruit_httpserver import Server, Request, Response
 
 i2c = busio.I2C(scl=board.GP1, sda=board.GP0)
 pca = adafruit_tca9548a.PCA9546A(i2c)
+
+def load_json_file(path):
+    with open(path) as fh:
+        j_obj = json.load(fh)
+    return j_obj
         
-sensor_info = [
-    {"room": "Kitchen", "device": "Terminal 1", "maxamps": 5},
-    {"room": "Master Bed Room", "device": "Terminal 1", "maxamps": 5},
-    {"room": "Dinning Room", "device": "Terminal 1", "maxamps": 5},
-    {"room": "Son Bed Room", "device": "Terminal 1", "maxamps": 5},
-
-    {"room": "Daughter Bed Room", "device": "Terminal 1", "maxamps": 5},
-    {"room": "Hall", "device": "Terminal 1", "maxamps": 5},
-    {"room": "Kitchen", "device": "Terminal 2", "maxamps": 15},
-    {"room": "Daughter Bed Room", "device": "Geyser", "maxamps": 15},
-
-    {"room": "Son Bed Room", "device": "AC", "maxamps": 30},
-    {"room": "Daughter Bed Room", "device": "AC", "maxamps": 30},
-    {"room": "Hall", "device": "AC", "maxamps": 30},
-    {"room": "Kitchen", "device": "Terminal 3", "maxamps": 15},
-
-    {"room": "Son Bed Room", "device": "Geyser", "maxamps": 15},
-    {"room": "Master Bed Room", "device": "Geyser", "maxamps": 15},
-    {"room": "Master Bed Room", "device": "AC", "maxamps": 30},
-    {"room": "Dinning Room", "device": "AC", "maxamps": 30},
-]
+sensor_info = load_json_file("devices.json")
 
 addresses = [0x48, 0x49]
 channels = [(ADS.P2, ADS.P3), (ADS.P0, ADS.P1)]

@@ -1,0 +1,21 @@
+[
+    {"room": "Kitchen", "device": "Terminal 1", "maxamps": 5},
+    {"room": "Master Bed Room", "device": "Terminal 1", "maxamps": 5},
+    {"room": "Dinning Room", "device": "Terminal 1", "maxamps": 5},
+    {"room": "Son Bed Room", "device": "Terminal 1", "maxamps": 5},
+
+    {"room": "Daughter Bed Room", "device": "Terminal 1", "maxamps": 5},
+    {"room": "Hall", "device": "Terminal 1", "maxamps": 5},
+    {"room": "Kitchen", "device": "Terminal 2", "maxamps": 15},
+    {"room": "Daughter Bed Room", "device": "Geyser", "maxamps": 15},
+
+    {"room": "Son Bed Room", "device": "AC", "maxamps": 30},
+    {"room": "Daughter Bed Room", "device": "AC", "maxamps": 30},
+    {"room": "Hall", "device": "AC", "maxamps": 30},
+    {"room": "Kitchen", "device": "Terminal 3", "maxamps": 15},
+
+    {"room": "Son Bed Room", "device": "Geyser", "maxamps": 15},
+    {"room": "Master Bed Room", "device": "Geyser", "maxamps": 15},
+    {"room": "Master Bed Room", "device": "AC", "maxamps": 30},
+    {"room": "Dinning Room", "device": "AC", "maxamps": 30}
+]
