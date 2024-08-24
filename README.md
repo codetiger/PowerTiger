@@ -1,4 +1,5 @@
-# Home-Energy-Monitor
+# PowerTiger
+<p align="center"><img src="PowerTiger_logo.jpg" /></p>
 
 ## Overview
 This project is an open-source energy monitoring solution designed to track and measure power consumption in a household. The design is centered around the Raspberry Pi Pico W, interfaced with Current Transformer (CT) sensors via a custom PCB. The project is developed using KiCad for PCB design and is part of an open-source hardware (OSH) initiative.
